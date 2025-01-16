@@ -65,7 +65,7 @@ def check_auchan():
 def main():
     choix = menu()
     if choix == '1':
-        print(check_nrj())
+        check_nrj()
     elif choix == '2':
         check_auchan()
     #elif choix == '3':
