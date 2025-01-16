@@ -13,29 +13,53 @@ def menu():
     return choix
 
 def check_nrj():
+    list_ok_5g_0 = []
     list_ok_5g = []
+    list_ok_4g_0 = []
     list_ok_4g = []
+    #Lien avec 5G et 0
     for i in range(10,1000,10):
-        url5g=f"https://www.nrjmobile.fr/forfait-se/forfait-woot-{i}-go-5g-sans-engagement-0"
+        url5g_0=f"https://www.nrjmobile.fr/forfait-se/forfait-woot-{i}-go-5g-sans-engagement-0"
+        #5g_0
+        response = get_data(url5g_0)
+        if response.status_code == 200:
+            print(f"{i} Go 5G_0 : OK")
+            list_ok_5g_0.append([i,url5g_0])
+        else:
+            print(f"{i} Go 5G_0: KO")
+    #Lien avec 5G
+    for i in range(10,1000,10):
+        url5g=f"https://www.nrjmobile.fr/forfait-se/forfait-woot-{i}-go-5g-sans-engagement"
         #5g
         response = get_data(url5g)
         if response.status_code == 200:
-            print(f"{i} Go 5G : OK")
-            list_ok_5g.append(i)
+            print(f"{i} Go 5G_0 : OK")
+            list_ok_5g.append([i,url5g])
         else:
-            print(f"{i} Go 5G: KO")
+            print(f"{i} Go 5G_0: KO")
+    for i in range(10,1000,10):
+        url4g_0=f"https://www.nrjmobile.fr/forfait-se/forfait-woot-{i}-go-sans-engagement-0"
+        #4g_0
+        response = get_data(url4g_0)
+        if response.status_code == 200:
+            print(f"{i} Go 4G_0 : OK")
+            list_ok_4g_0.append([i,url4g_0])
+        else:
+            print(f"{i} Go 4G_0 : KO")
     for i in range(10,1000,10):
         url4g=f"https://www.nrjmobile.fr/forfait-se/forfait-woot-{i}-go-sans-engagement-0"
-        #5g
+        #4g
         response = get_data(url4g)
         if response.status_code == 200:
             print(f"{i} Go 4G : OK")
-            list_ok_4g.append(i)
+            list_ok_4g.append([i,url4g])
         else:
             print(f"{i} Go 4G: KO")
         
     print("Liste des forfaits 4G NRJ Mobile : ", list_ok_4g)
     print("Liste des forfaits 5G NRJ Mobile : ", list_ok_5g)
+    print("Liste des forfaits 4G_0 NRJ Mobile : ", list_ok_4g_0)
+    print("Liste des forfaits 5G_0 NRJ Mobile : ", list_ok_5g_0)
 
 def check_auchan():
     list_ok_5g = []
