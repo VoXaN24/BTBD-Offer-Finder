@@ -1,7 +1,11 @@
 import requests
 
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+}
+
 def get_data(url):
-    return requests.get(url)
+    return requests.get(url,headers=headers)
 
 def menu():
     print("Choix de l'OP")
@@ -33,10 +37,10 @@ def check_nrj():
         #5g
         response = get_data(url5g)
         if response.status_code == 200:
-            print(f"{i} Go 5G_0 : OK")
+            print(f"{i} Go 5G : OK")
             list_ok_5g.append([i,url5g])
         else:
-            print(f"{i} Go 5G_0: KO")
+            print(f"{i} Go 5G: KO")
     for i in range(10,1000,10):
         url4g_0=f"https://www.nrjmobile.fr/forfait-se/forfait-woot-{i}-go-sans-engagement-0"
         #4g_0
