@@ -1,3 +1,4 @@
+⚠️JE SUIS PAS RESPONSABLE DE VOS BETISES⚠️
 # BTBD-Offer-Finder
  Trouve les offres caché des MNVO du groupes BTBD
 
