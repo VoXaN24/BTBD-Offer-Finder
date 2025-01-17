@@ -89,7 +89,7 @@ def check_auchan():
         else:
             print(f"{i} Go 4G: KO")
     for i in range(10,1000,10):
-        url5g_0=f"https://www.auchantelecom.fr/forfait-se/auchan-telecom-{i}-go-5g-sans-engagement"
+        url5g_0=f"https://www.auchantelecom.fr/forfait-se/auchan-telecom-{i}-go-5g-sans-engagement-0"
         #5g
         response = get_data(url5g_0)
         if response.status_code == 200:
@@ -98,7 +98,7 @@ def check_auchan():
         else:
             print(f"{i} Go 5G: KO")
     for i in range(10,1000,10):
-        url4g_0=f"https://www.auchantelecom.fr/forfait-se/auchan-telecom-{i}-go-sans-engagement"
+        url4g_0=f"https://www.auchantelecom.fr/forfait-se/auchan-telecom-{i}-go-sans-engagement-0"
         #5g
         response = get_data(url4g_0)
         if response.status_code == 200:
