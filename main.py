@@ -76,7 +76,7 @@ def check_auchan():
         response = get_data(url5g)
         if response.status_code == 200:
             print(f"{i} Go 5G : OK")
-            list_ok_5g.append(i,url5g)
+            list_ok_5g.append([i,url5g])
         else:
             print(f"{i} Go 5G: KO")
     for i in range(10,1000,10):
@@ -85,7 +85,7 @@ def check_auchan():
         response = get_data(url4g)
         if response.status_code == 200:
             print(f"{i} Go 4G : OK")
-            list_ok_4g.append(i,url4g)
+            list_ok_4g.append([i,url4g])
         else:
             print(f"{i} Go 4G: KO")
     for i in range(10,1000,10):
@@ -94,7 +94,7 @@ def check_auchan():
         response = get_data(url5g_0)
         if response.status_code == 200:
             print(f"{i} Go 5G : OK")
-            list_ok_5g_0.append(i,url5g_0)
+            list_ok_5g_0.append([i,url5g_0])
         else:
             print(f"{i} Go 5G: KO")
     for i in range(10,1000,10):
@@ -103,7 +103,7 @@ def check_auchan():
         response = get_data(url4g_0)
         if response.status_code == 200:
             print(f"{i} Go 4G : OK")
-            list_ok_4g_0.append(i,url4g_0)
+            list_ok_4g_0.append([i,url4g_0])
         else:
             print(f"{i} Go 4G: KO")
         
